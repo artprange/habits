@@ -14,7 +14,7 @@ const amountOfDaysToFill = minimumSummartDatesSize - summaryDates.length;
 
 type Summary = {
   id: string;
-  date: string;
+  date: Date;
   amount: number;
   completed: number;
 }[];
@@ -33,7 +33,7 @@ export function SummaryTable() {
           return (
             <div
               key={`${weekDay}-${i}`}
-              className="text-zinc-400 text-xl h-10 font-bold w-10 flex items-center justify-center"
+              className="text-zinc-400 text-xl h-10 w-10 font-bold flex items-center justify-center"
             >
               {weekDay}
             </div>
@@ -56,7 +56,7 @@ export function SummaryTable() {
             );
           })}
         {amountOfDaysToFill > 0 &&
-          Array.from({ length: amountOfDaysToFill }).map((_, i) => {
+          Array.from({ length: amountOfDaysToFill }).map((__, i) => {
             return (
               <div
                 key={i}

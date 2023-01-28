@@ -4,7 +4,7 @@ interface ProgressBarProps {
 
 export function ProgresssBar(props: ProgressBarProps) {
   const progressStyles = {
-    width: `{props.progress}%`,
+    width: `${props.progress}%`,
   };
   return (
     <div className="h-3 rounded-xl bg-zinc-700 w-full mt-4">
@@ -13,8 +13,8 @@ export function ProgresssBar(props: ProgressBarProps) {
         aria-label="Progresso de hábitos completados neste dia"
         aria-valuenow={props.progress}
         className="h-3 rounded-xl bg-violet-600 transition-all"
-        style={{ width: `${props.progress}%` }}
-      />{" "}
+        style={progressStyles}
+      />
     </div>
   );
 }
